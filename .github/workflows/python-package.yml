@@ -18,7 +18,7 @@ jobs:
          run: |
               pip install poetry
               make install
-              make lint
+              poetry run flake8 brain_games
        - name: Run tests
          run: |
              make test2
