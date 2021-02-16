@@ -16,5 +16,5 @@ jobs:
     
     steps:
       - name: Lint
-        run: make lint
+        run: poetry run flake8 brain_games
   
