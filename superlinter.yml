@@ -16,9 +16,6 @@ jobs:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
         uses: actions/checkout@v2
-      
-      - name: Lint
-        run: make lint
         
       # Runs the Super-Linter action
       - name: Run Super-Linter
@@ -26,3 +23,24 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+     
+name: 'test my project'
+on:
+  push:
+  pull-request:
+jobs:
+  test-job:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      name: 'setup node'
+      with:
+        node-version: '13.x'
+
+    - name: 'install'
+      run: npm i
+
+    - name: 'test'
+      run: npm run test
