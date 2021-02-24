@@ -14,8 +14,6 @@ jobs:
          uses: actions/setup-python@v2
          with:
             python-version: ${{ matrix.python-version }}
-       - name: Install Make
-         run: install make
        - name: Install poetry
          run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
        - name: Run linter
