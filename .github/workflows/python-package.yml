@@ -16,14 +16,7 @@ jobs:
             python-version: ${{ matrix.python-version }}
        - name: Install poetry
          run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-       - name: Install Python dependencies
-         run: pip install black flake8
-       - name: Run linters
-         uses: wearerequired/lint-action@v1
-         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Enable linters
-          black: true
-          flake8: true
+       - name: Linter
+         run: pip install isort
        - name: Run linter
          run: make lint
