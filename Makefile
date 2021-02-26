@@ -19,6 +19,4 @@ lint:
 selfcheck:
 	poetry check
 
-check: lint
-
 .PHONY: install test lint selfcheck check build
