@@ -13,5 +13,18 @@ publish:
 package-install:
 	python3 -m pip install --user dist/*.whl
 
-make lint:
+test:
+	poetry run pytest brain_games tests
+
+lint:
 	poetry run flake8 brain_games
+
+selfcheck:
+	poetry check
+
+check: selfcheck test lint
+
+.PHONY: install test lint selfcheck check build
+
+#make lint:
+	#poetry run flake8 brain_games
