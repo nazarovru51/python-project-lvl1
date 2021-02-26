@@ -21,6 +21,6 @@ jobs:
        - name: Install pytest
          run: |
           pip install pytest
-       - name: Run linter and pytest
+       - name: Run linter
          run: |
           make check
